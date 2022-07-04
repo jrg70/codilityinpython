@@ -35,3 +35,19 @@ N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [0..1,000,000,000];
 each element of array B is an integer that can have one of the following values: 0, 1;
 the elements of A are all distinct."""
+
+def solution(A,B):
+  ds = []
+  c = 0
+  for i in range(0,len(B)):
+    if(B[i]==1):
+      ds.append(A[i])
+    else:
+      while len(ds)!=0:
+        if ds[-1]>A[i]:
+          c += 1
+          break
+        else: #ds[-1]<=A[i], there is no explanation what happens when fish have same size, lets assume the one going down wins the battle
+          ds.pop()
+          c += 1
+  return len(A)-c #inital fish - eaten ones
