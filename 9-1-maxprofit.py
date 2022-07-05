@@ -30,3 +30,23 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [0..400,000];
 each element of array A is an integer within the range [0..200,000]."""
 
+A = [23171,21011,21123,21366,21013,21367]
+
+def solution(A):
+  if len(A) == 0:
+    return 0
+  min = A[0]
+  max = 0
+  s = 0
+
+  for i in range(1, len(A)):
+    if A[i]<min:
+      min=A[i]
+      s=0
+    else:
+      s+=(A[i]-A[i-1])
+    if max<s:
+      max=s
+  return max
+
+solution(A)
