@@ -22,3 +22,10 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..1,000,000,000]."""
 
+def solution(N): #100%
+  c = []
+  for i in range(1,int(N**0.5)+1):
+    if N%i == 0:
+      c.append((2*i**2+2*N)/i)
+  return int(min(c))
+solution(30)
