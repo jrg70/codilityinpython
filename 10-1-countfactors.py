@@ -22,5 +22,13 @@ def slowlution(N): #only gives 64% since performance suffers from going thorugh 
       c+=1
   return c
 
-
+def fastlution(N): # faster 100%, making use of the fact that the total number must be twice the amount that in the square root (or -1 that number). 10-2 makes it much clearer and it is more intuitive why we use the square root
+  c = 0
+  for i in range(1,int(N**0.5)+1):
+    if N%i == 0:
+      c+=1
+    if N==int(N**0.5)*int(N**0.5):
+      return c*2-1
+    else:
+      return c*2
 
