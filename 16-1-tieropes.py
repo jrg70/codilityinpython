@@ -48,3 +48,9 @@ K is an integer within the range [1..1,000,000,000];
 each element of array A is an integer within the range [1..1,000,000,000]."""
 
 
+def solution(K,A):
+  c = 0
+  sum = 0 
+  if K == 1: # quick exit: if N is large but K is 1 the number of "tied ropes" is just the length of A
+    return len(A)
+
