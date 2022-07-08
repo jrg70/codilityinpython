@@ -53,4 +53,9 @@ def solution(K,A):
   sum = 0 
   if K == 1: # quick exit: if N is large but K is 1 the number of "tied ropes" is just the length of A
     return len(A)
-
+  for i in A:
+    sum += i
+    if sum >= K:
+      c += 1
+      sum = 0
+  return c
