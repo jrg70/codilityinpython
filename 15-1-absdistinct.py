@@ -31,3 +31,12 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−2,147,483,648..2,147,483,647];
 array A is sorted in non-decreasing order."""
+
+def solution(A):
+  dict = {}
+  for i in A:
+    if i <= 0:
+      dict[-i] = True
+    else:
+      dict[i] = True
+  return len(dict)
