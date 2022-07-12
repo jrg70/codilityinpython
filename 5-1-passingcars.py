@@ -37,3 +37,15 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..100,000];
 each element of array A is an integer that can have one of the following values: 0, 1."""
 
+A = [1,0,1]
+def solution(A):
+  c = 0
+  for i,val in enumerate(A):
+    if c > 1e9:
+      return -1
+    if val == 1:
+      continue
+    else:
+      c = c + sum(A[i:])
+  return c
+solution(A)
