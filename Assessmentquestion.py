@@ -36,4 +36,22 @@ def solution(A,B,q):
 solution("aba")
 
 # 3. You are given a number e.g. 14, the sum of its digits is 1+4=5, this times two is 10, this back into digits again would be 19. For any given input number  N
-# compute that described way. Another example was 999 -> 9+9+9= 27 -> 27*2 = 54 -> 999999  
+# compute that described way. Another example was 999 -> 9+9+9= 27 -> 27*2 = 54 -> 999999. 
+# Since we multiply with 2 the last digits must be 0,2,4,6 or 8.
+# 2 -> 11
+# 4 -> 13
+# 6 -> 15
+# 8 -> 17
+# 10 -> 19
+# 12 -> 39
+# 14 -> 59
+# 16 -> 79
+# 18 -> 99
+# 20 -> 299
+
+def Q(num): #calculates the sum of the digits
+    result = 0
+    while num:
+        result += num % 10
+        num = int(num / 10)
+    return result
