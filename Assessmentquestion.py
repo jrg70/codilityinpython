@@ -55,3 +55,15 @@ def Q(num): #calculates the sum of the digits
         result += num % 10
         num = int(num / 10)
     return result
+
+def solution(N):
+  Csum = (Q(N)*2)
+  if Csum <= 10:
+    Csum += 9
+  else:
+    array = [Csum%9] + int((Csum/9))*[9]
+    s = [str(i) for i in array]
+    Csum = int("".join(s))
+  return Csum
+
+solution(99)  
