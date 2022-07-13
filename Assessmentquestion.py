@@ -34,3 +34,6 @@ def solution(A,B,q):
   return dict
 
 solution("aba")
+
+# 3. You are given a number e.g. 14, the sum of its digits is 1+4=5, this times two is 10, this back into digits again would be 19. For any given input number  N
+# compute that described way. Another example was 999 -> 9+9+9= 27 -> 27*2 = 54 -> 999999  
