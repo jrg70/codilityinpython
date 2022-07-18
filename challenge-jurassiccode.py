@@ -11,3 +11,10 @@ that, given two arrays of integers X, Y and a string colors, returns an integer 
 Examples:
 
 1. Given X = [4, 0, 2, −2], Y = [4, 1, 2, −3] and colors = "RGRR", your function should return 2. The circle contains points (0, 1) and (2, 2), but not points (−2, −3) and (4, 4)."""
+
+import numpy as np
+def solution(X,Y, colors):
+  colors = list(colors)
+  S = np.add(np.absolute(X),np.absolute(Y))
+  X_sort , Y_sort, colors_sort = [x for _,x in sorted(zip(S,X))], [x for _,x in sorted(zip(S,Y))], [x for _,x in sorted(zip(S,colors))]
+  for i in range(0,len(X)):
