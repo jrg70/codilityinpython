@@ -18,3 +18,10 @@ def solution(X,Y, colors):
   S = np.add(np.absolute(X),np.absolute(Y))
   X_sort , Y_sort, colors_sort = [x for _,x in sorted(zip(S,X))], [x for _,x in sorted(zip(S,Y))], [x for _,x in sorted(zip(S,colors))]
   for i in range(0,len(X)):
+    dict = {}
+    dict['R'], dict['G'] = 0, 0 
+    r = (X[len(X)-i-1]**2+Y[len(X)-i-1]**2)**0.5
+    for j in range(0,len(X)-i):
+      dict[colors[j]] += 1
+    if dict['R'] == dict['G']:
+      return dict.get('R')*2
