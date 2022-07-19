@@ -22,3 +22,13 @@ N is an integer within the range [0..100,000];
 the elements of A are all distinct;
 each element of array A is an integer within the range [1..(N + 1)]."""
 
+def solution(A):
+  if len(A) == 0:
+    return 1
+  A.sort()
+  if A[0] != 1:
+    return 1
+  for i in range(0,len(A)-1):
+    if A[i+1] - A[i] != 1: 
+      return A[i+1]-1
+  return max(A)+1
