@@ -12,6 +12,8 @@ Examples:
 
 1. Given X = [4, 0, 2, −2], Y = [4, 1, 2, −3] and colors = "RGRR", your function should return 2. The circle contains points (0, 1) and (2, 2), but not points (−2, −3) and (4, 4)."""
 
+# the idea is to sort the points first in how far away they're from the origin then we jump the furthest and see if the nb of colored points are equal
+
 import numpy as np
 def solution(X,Y, colors):
   colors = list(colors)
