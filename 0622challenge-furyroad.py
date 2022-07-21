@@ -31,10 +31,10 @@ def solution(R):
   :time_min: Smallest time needed 
   """
   time = {"scooter": {"A": 5, "S": 40}, "foot": {"A": 20, "S": 30}}
-  scooter, foot = [0, speed['scooter'][R[0]]], [speed['foot'][R[-1]]]
+  scooter, foot = [0, time['scooter'][R[0]]], [time['foot'][R[-1]]]
   for i in range(1, len(R)):
-        scooter.append(scooter[i] + speed['scooter'][R[i]])
-        foot.append(foot[i-1] + speed['foot'][R[-i-1]])
+        scooter.append(scooter[i] + time['scooter'][R[i]])
+        foot.append(foot[i-1] + time['foot'][R[-i-1]])
   # make sure time arrays are reverse order
   foot = foot[::-1]
   # for the case just foot/scooter
