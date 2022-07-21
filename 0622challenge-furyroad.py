@@ -22,3 +22,19 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..100,000];
 string R consists only of the characters "S" and/or "A"."""
+
+
+def solution(R):
+  """
+  Minimize the time to work
+  :str R: String containg two different types of terrain S(and) and A(sphalt)
+  :time_min: Smallest time needed 
+  """
+  time = {"scooter": {"A": 5, "S": 40}, "foot": {"A": 20, "S": 30}}
+  scooter, foot = [0, speed['scooter'][R[0]]], [speed['foot'][R[-1]]]
+  for i in range(1, len(R)):
+        scooter.append(scooter[i] + speed['scooter'][R[i]])
+        foot.append(foot[i-1] + speed['foot'][R[-i-1]])
+  # make sure time arrays are reverse order
+  foot = foot[::-1]
+  
