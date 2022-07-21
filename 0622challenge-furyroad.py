@@ -37,4 +37,15 @@ def solution(R):
         foot.append(foot[i-1] + speed['foot'][R[-i-1]])
   # make sure time arrays are reverse order
   foot = foot[::-1]
+  # for the case just foot/scooter
+  time_min = min(scooter[-1], foot[0])
+
+  for i in range(1, len(scooter) - 1):
+      s = scooter[-1] - scooter[i]
+      f = scooter[i] + foot[i]
+
+      if foot[i] < s and f < time_min:
+          time_min = f
+
+  return time_min
   
