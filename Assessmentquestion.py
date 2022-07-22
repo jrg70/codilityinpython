@@ -1,6 +1,6 @@
 # Three questions in total
 
-# 1. Compute the specifity/sensitivity based on two binary strings:
+# 1. Compute the specifity/sensitivity based on two binary strings, e.g. A = "0101" B = "1111" where A is the Real and B the Test result, parameter q sets whether Specificty or Sensitivity should be calculated:
 
 def solution(A,B,q):
   if q == True: # spec
