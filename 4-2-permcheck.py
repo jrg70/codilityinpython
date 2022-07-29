@@ -44,6 +44,11 @@ N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [1..1,000,000,000]."""
 
 def solution(A):
+    """
+    Check whether A is a permutation
+    :array A: Is the list of numbers to check for permutation
+    :return 0 or 1: 1 if permutation, 0 if not
+    """
   if len(A) == 0:
     return 0
   
