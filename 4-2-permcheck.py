@@ -43,3 +43,20 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [1..1,000,000,000]."""
 
+def solution(A):
+  if len(A) == 0:
+    return 0
+  
+  dict = {}
+  for i in A:
+    if i in dict:
+      return 0
+    dict[i] = True
+  
+  if len(A) != len(dict):
+    return 0
+
+  for i in range(1,len(A)+1):
+    if i not in A:
+      return 0
+  return 1
