@@ -16,6 +16,11 @@ N is an integer within the range [1..2,147,483,647]."""
 
 
 def slowlution(N): #only gives 64% since performance suffers from going thorugh every number 
+  """
+  Compute number of factors of an integer
+  :int N: Given is a postive integer
+  :return int: Output is also an integer
+  """
   c = 0
   for i in range(1,N+1):
     if N%i == 0:
@@ -23,6 +28,11 @@ def slowlution(N): #only gives 64% since performance suffers from going thorugh 
   return c
 
 def fastlution(N): # faster 100%, making use of the fact that the total number must be twice the amount that in the square root (or -1 that number). 10-2 makes it much clearer and it is more intuitive why we use the square root
+  """
+  Compute number of factors of an integer
+  :int N: Given is a postive integer
+  :return int: Output is also an integer
+  """
   c = 0
   for i in range(1,int(N**0.5)+1):
     if N%i == 0:
