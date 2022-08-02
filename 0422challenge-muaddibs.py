@@ -8,3 +8,7 @@ def  solution(A):
             day[A[a]] = 1
             a += 1   
         i = M - 1
+        while (i > -1):
+            if (day[i] == 0) :
+                price[i] = price[i + 1]
+            else:
