@@ -4,3 +4,7 @@ def  solution(A):
         price = [0] * (M + 1)
         day = [0] * (M)
         a = 0
+        while (a < len(A)) :
+            day[A[a]] = 1
+            a += 1   
+        i = M - 1
