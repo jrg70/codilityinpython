@@ -12,3 +12,7 @@ def  solution(A):
             if (day[i] == 0) :
                 price[i] = price[i + 1]
             else:
+                price[i] = min(2 + price[i + 1],min(7 + price[i + 7],25 + price[i + 30]))
+            i -= 1
+        print(day, price)    
+        return price[1]
